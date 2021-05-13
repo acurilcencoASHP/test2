@@ -1,0 +1,137 @@
+{
+	"name": "AmgenEventsMcm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "eventid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cardid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "eventtype",
+				"type": "nvarchar"
+			},
+			{
+				"name": "locationid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "terminalid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "categoryid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "payload",
+				"type": "nvarchar"
+			},
+			{
+				"name": "eventdate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customcardnumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ims_customer_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "npi",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_tier",
+				"type": "nvarchar"
+			},
+			{
+				"name": "channel_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "channel_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "brand",
+				"type": "nvarchar"
+			},
+			{
+				"name": "transaction_timestamp",
+				"type": "nvarchar"
+			},
+			{
+				"name": "activity_count",
+				"type": "nvarchar"
+			},
+			{
+				"name": "promotion_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "vendor_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "vendor_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "campaign_start_date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "campaign_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "drop_date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "message",
+				"type": "nvarchar"
+			},
+			{
+				"name": "offer_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "disposition_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "disposition_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "offer_level",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "amgen_events_mcm"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

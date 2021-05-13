@@ -1,0 +1,417 @@
+{
+	"name": "All_HCPs_PII",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "First name",
+				"type": "varchar"
+			},
+			{
+				"name": "Last name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer id",
+				"type": "varchar"
+			},
+			{
+				"name": "Email",
+				"type": "varchar"
+			},
+			{
+				"name": "Address 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Address 2",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "Zipcode",
+				"type": "varchar"
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "Mobile phone",
+				"type": "varchar"
+			},
+			{
+				"name": "All customers 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of profile updated events 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Prescribing Locations",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication delivered event",
+				"type": "varchar"
+			},
+			{
+				"name": "Type 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Affiliated Locations Count",
+				"type": "varchar"
+			},
+			{
+				"name": "Prescribing Tier",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication read event",
+				"type": "varchar"
+			},
+			{
+				"name": "Affiliated LDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "subtype 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Age",
+				"type": "varchar"
+			},
+			{
+				"name": "NPI",
+				"type": "varchar"
+			},
+			{
+				"name": "Units Per IDO",
+				"type": "varchar"
+			},
+			{
+				"name": "Opportunity IDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent issuance or redemption event 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication delivered events this year",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent opt out event",
+				"type": "varchar"
+			},
+			{
+				"name": "Prescribing MDOs 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Chargeback Units Per Location",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication delivered events",
+				"type": "varchar"
+			},
+			{
+				"name": "Birthday",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication delivered events last 6 months",
+				"type": "varchar"
+			},
+			{
+				"name": "Prescribing MDOs 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Program Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Owning Location Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication clicked events this year",
+				"type": "varchar"
+			},
+			{
+				"name": "Program Attendee Type 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Target Type 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Prescribing IDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Opportunity MDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Prescribing LDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication delivered events last 90 days",
+				"type": "varchar"
+			},
+			{
+				"name": "Chargeback Units",
+				"type": "varchar"
+			},
+			{
+				"name": "Specialty List",
+				"type": "varchar"
+			},
+			{
+				"name": "All customers 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Custom Card Number 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Middle Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Opportunity LDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary Specialty 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication clicked events last 6 months",
+				"type": "varchar"
+			},
+			{
+				"name": "Affiliated MDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Secondary Specialty 1",
+				"type": "varchar"
+			},
+			{
+				"name": "DIABETES & METABOLISM 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Units Per LDO",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication clicked events last 90 days",
+				"type": "varchar"
+			},
+			{
+				"name": "Type 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication read events",
+				"type": "varchar"
+			},
+			{
+				"name": "Opportunity Locations",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of opt out events",
+				"type": "varchar"
+			},
+			{
+				"name": "Activation Date",
+				"type": "varchar"
+			},
+			{
+				"name": "Units Per MDO",
+				"type": "varchar"
+			},
+			{
+				"name": "Longitude",
+				"type": "varchar"
+			},
+			{
+				"name": "Secondary Specialty 2",
+				"type": "varchar"
+			},
+			{
+				"name": "DIABETES & METABOLISM 2",
+				"type": "varchar"
+			},
+			{
+				"name": "IMS ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "varchar"
+			},
+			{
+				"name": "Custom Card Number 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication spam reported events",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary Specialty 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Affiliated IDOs",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication deferred event",
+				"type": "varchar"
+			},
+			{
+				"name": "Target Type 2",
+				"type": "varchar"
+			},
+			{
+				"name": "subtype 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication read events this year",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent bounced event",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of bounced events",
+				"type": "varchar"
+			},
+			{
+				"name": "Card Set Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication clicked events",
+				"type": "varchar"
+			},
+			{
+				"name": "Program Attendee Type 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Secondary Specialty",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication failed event",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication clicked event",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication sent event",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication read events last 90 days",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication sent events",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of profile updated events 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of opt in events",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication failed events",
+				"type": "varchar"
+			},
+			{
+				"name": "Global email opt in status",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent opt in event",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication deferred events",
+				"type": "varchar"
+			},
+			{
+				"name": "Affiliated Locations",
+				"type": "varchar"
+			},
+			{
+				"name": "Latitude",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary Specialty",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent issuance or redemption event 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Most recent communication spam reported event",
+				"type": "varchar"
+			},
+			{
+				"name": "Count of communication read events last 6 months",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "All_HCPs_PII_Excluded"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

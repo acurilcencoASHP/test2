@@ -1,0 +1,263 @@
+{
+	"name": "Convert_Amgen_File",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEachSheetName",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('SheetNames')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "RegularFile Copy",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "ExcelSource",
+									"storeSettings": {
+										"type": "FtpReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false,
+										"useBinaryTransfer": true
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "FileServerWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "Test_Contact_Response_File_XLSX",
+									"type": "DatasetReference",
+									"parameters": {
+										"SheetName": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Output_Files_TXT",
+									"type": "DatasetReference",
+									"parameters": {
+										"SheetName": {
+											"value": "@concat(replace(replace(replace(item(),'CONTACT FILE','AMGEN_CONTRACT_DATA_'),'RESPONSE FILE','AMGEN_RESPONSE_'),'AGGREGATE FILE','AMGEN_AggReport_'),formatDateTime(utcnow(),'yyyMMddHHmmss'),'.txt')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "LogActions",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "RegularFile Copy",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[amgen].[LogAction]",
+								"storedProcedureParameters": {
+									"FileName": {
+										"value": {
+											"value": "@concat(item(),'.txt')",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"PipeLineRunId": {
+										"value": {
+											"value": "@pipeline().RunId",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"PipeLineTime": {
+										"value": {
+											"value": "@utcnow()",
+											"type": "Expression"
+										},
+										"type": "Datetime"
+									},
+									"RowsCopied": {
+										"value": {
+											"value": "@activity('RegularFile Copy').output.rowsCopied",
+											"type": "Expression"
+										},
+										"type": "Int32"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "Amgendb",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "ControlFile Copy",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "LogActions",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"sqlReaderQuery": "select CONCAT('AMGEN_',\n\t   REPLACE(REPLACE(REPLACE(LEFT(FileName, LEN(FileName)-4),'CONTACT FILE','CONTRACT_DATA_'),'RESPONSE FILE','RESPONSE_'),'AGGREGATE FILE','AggReport_'),\n\t   FORMAT(CreatedDate,'yyyyMMddHHmmssffff'),\n\t   '.txt'\n\t   ) as file_name,\n\t   cast(RecordsCount as varchar) as records_count,\n\t   FORMAT(CreatedDate,'yyyyMMddHHmmssffff') as file_creation_date\nfrom amgen.ETL_LOG\nwhere cast(CreatedDate as date) = cast(getdate() as date)",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "FileServerWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"name": "file_name",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "file_name",
+												"type": "String",
+												"physicalType": "String"
+											}
+										},
+										{
+											"source": {
+												"name": "records_count",
+												"type": "String",
+												"physicalType": "varchar"
+											},
+											"sink": {
+												"name": "records_count",
+												"type": "String",
+												"physicalType": "String"
+											}
+										},
+										{
+											"source": {
+												"name": "file_creation_date",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "file_creation_date",
+												"type": "String",
+												"physicalType": "String"
+											}
+										}
+									],
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "AmgenETL_LOG",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Control_File_TXT",
+									"type": "DatasetReference",
+									"parameters": {
+										"FileName": "CONTROL_FILE.txt"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"SheetNames": {
+				"type": "Array",
+				"defaultValue": [
+					"CONTACT FILE",
+					"RESPONSE FILE",
+					"AGGREGATE FILE"
+				]
+			}
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-05-12T16:15:51Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

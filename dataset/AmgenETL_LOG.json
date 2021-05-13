@@ -1,0 +1,51 @@
+{
+	"name": "AmgenETL_LOG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ETLLogID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreatedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FileName",
+				"type": "varchar"
+			},
+			{
+				"name": "PipeLineRunID",
+				"type": "varchar"
+			},
+			{
+				"name": "PipeLineTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RecordsCount",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "ETL_LOG"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

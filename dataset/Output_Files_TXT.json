@@ -1,0 +1,34 @@
+{
+	"name": "Output_Files_TXT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ETL_Local",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"SheetName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": {
+					"value": "@dataset().SheetName",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": "\t",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"quoteChar": ""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

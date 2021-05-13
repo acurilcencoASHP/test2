@@ -1,0 +1,113 @@
+{
+	"name": "ParsabivNormalizedUnits",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Territory_Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Territory_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "District_Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "District_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KAM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KAM Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Customer_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "State",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Zip",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Brand",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Quarter_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Month_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Week_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Time_bucket_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Normalized_units",
+				"type": "nvarchar"
+			},
+			{
+				"name": "derived_patient_count",
+				"type": "nvarchar"
+			},
+			{
+				"name": "inbu_peak_sf_parsabiv_comp_include",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Week",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "ParsabivNormalizedUnits"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

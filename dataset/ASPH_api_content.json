@@ -1,0 +1,20 @@
+{
+	"name": "ASPH_api_content",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ASPHdb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ASPH"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "api_content"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

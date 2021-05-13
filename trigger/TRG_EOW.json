@@ -1,0 +1,30 @@
+{
+	"name": "TRG_EOW",
+	"properties": {
+		"description": "import weekly Amgen files",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "LoadAmgenFiles",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Week",
+				"interval": 1,
+				"startTime": "2021-03-29T15:00:00Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"weekDays": [
+						"Monday"
+					]
+				}
+			}
+		}
+	}
+}

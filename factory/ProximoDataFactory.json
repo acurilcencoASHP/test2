@@ -1,0 +1,9 @@
+{
+	"name": "ProximoDataFactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e2ec0026-fb2f-46b1-b144-77f9f4da7ec0",
+		"tenantId": "a6b1c17a-f50f-4a0f-bde3-79132cfc95f1"
+	}
+}

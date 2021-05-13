@@ -1,0 +1,74 @@
+{
+	"name": "GetSurveys",
+	"properties": {
+		"activities": [
+			{
+				"name": "SM_GetSurveys",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://api.surveymonkey.net/v3/surveys",
+					"method": "GET",
+					"headers": {
+						"Content-Type": "application/json",
+						"Authorization": "bearer ScMCR1wGsDtI4d9AujMyvCSnJ3uU1DqAdjf0hp7-E1VVnOzRbN11yqdldvqLeGSb5Q2RZg0kpJjUIrHsTYooajFUyFEjzU5jJ6nxmyMDByiW1tr7KXmp43mVU0gBOHgd"
+					}
+				}
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "SM_GetSurveys",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[pr_sm_api]",
+					"storedProcedureParameters": {
+						"Content": {
+							"value": {
+								"value": "@string(activity('SM_GetSurveys').Output)",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"p_api_url": {
+							"value": "https://api.surveymonkey.net/v3/surveys",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ALAdb",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "SurveyMonkey"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-03-15T16:55:48Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

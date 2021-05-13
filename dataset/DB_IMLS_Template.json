@@ -1,0 +1,791 @@
+{
+	"name": "DB_IMLS_Template",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ALAdb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ALA_PLA"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SURVEY_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STABR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FSCSKEY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LIBID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LIBNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ADDRESS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ZIP4",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ADDRES_M",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CITY_M",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZIP_M",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ZIP4_M",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CNTY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PHONE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "C_RELATN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "C_LEGBAS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "C_ADMIN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "C_FSCS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GEOCODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LSABOUND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STARTDAT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ENDDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "POPU_LSA",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_POPLSA",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POPU_UND",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CENTLIB",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_CENLIB",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BRANLIB",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_BRLIB",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BKMOB",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_BKMOB",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MASTER",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_MASTER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LIBRARIA",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_LIBRAR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OTHPAID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_OTHSTF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTSTAFF",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTSTF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOCGVT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_LOCGVT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STGVT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_STGVT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FEDGVT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_FEDGVT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OTHINCM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_OTHINC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTINCM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTINC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SALARIES",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_SALX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BENEFIT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_BENX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STAFFEXP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOSTFX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRMATEXP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_PRMATX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ELMATEXP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_ELMATX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OTHMATEX",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_OTMATX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTEXPCO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOCOLX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OTHOPEXP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_OTHOPX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTOPEXP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTOPX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LCAP_REV",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_LCAPRV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SCAP_REV",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_SCAPRV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FCAP_REV",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_FCAPRV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OCAP_REV",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_OCAPRV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CAP_REV",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TCAPRV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CAPITAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TCAPX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BKVOL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_BKVOL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EBOOK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_EBOOK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AUDIO_PH",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_AUD_PH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AUDIO_DL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_AUD_DL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VIDEO_PH",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_VID_PH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VIDEO_DL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_VID_DL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EC_LO_OT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_EC_L_O",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EC_ST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_EC_ST",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ELECCOLL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_ELECOL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SUBSCRIP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_PRSUB",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HRS_OPEN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_HRS_OP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VISITS",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_VISITS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REFERENC",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_REFER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REGBOR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_REGBOR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTCIR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTCIR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KIDCIRCL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_KIDCIR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ELMATCIR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_EMTCIR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PHYSCIR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_PHYSCR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ELINFO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_ELINFO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ELCONT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_ELCONT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTCOLL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTCOL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOANTO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_LOANTO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOANFM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_LOANFM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTPRO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTPRO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KIDPRO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_KIDPRO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "YAPRO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_YAPRO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTATTEN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_TOTATT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KIDATTEN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_KIDATT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "YAATTEN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_YAATT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GPTERMS",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_GPTERM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PITUSR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_PITUSR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WIFISESS",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "F_WIFISS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WEBVISIT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "YR_SUB",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "OBEREG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RSTATUS",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "STATSTRU",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "STATNAME",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "STATADDR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LONGITUD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LATITUDE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INCITSST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "INCITSCO",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "GNISPLAC",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CNTYPOP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LOCALE_ADD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LOCALE_MOD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "REAPLOCALE_ADD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "REAPLOCALE_MOD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CENTRACT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CENBLOCK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CDCODE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CBSA",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MICROF",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "GEOMATCH",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "todrop",
+			"table": "imls_template"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

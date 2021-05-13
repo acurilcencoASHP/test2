@@ -1,0 +1,245 @@
+{
+	"name": "ASPH_DailyMed_SPLS",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetTotalPageInfo",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "CheckPreviousLoad",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "@concat('https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?published_date=',replace(replace(replace(replace(replace(string(activity('CheckPreviousLoad').output.firstRow),'\"',''),'\\',''),'{',''),'}',''),':',''))",
+						"type": "Expression"
+					},
+					"method": "GET"
+				}
+			},
+			{
+				"name": "Take page numbers",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GetTotalPageInfo",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "range",
+					"value": {
+						"value": "@range(1,activity('GetTotalPageInfo').output.metadata.total_pages)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ForEachPage",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Take page numbers",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('range')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "CopyToSql",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "GetURL",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[pr_PROXIMO_import_api_content]",
+								"storedProcedureParameters": {
+									"Content": {
+										"value": {
+											"value": "@string(activity('GetURL').output)",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"p_api_url": {
+										"value": {
+											"value": "@activity('GetURL').output.metadata.current_url",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"p_api_page": {
+										"value": {
+											"value": "@activity('GetURL').output.metadata.current_page",
+											"type": "Expression"
+										},
+										"type": "Int32"
+									},
+									"p_api_db_published_date": {
+										"value": {
+											"value": "@activity('GetURL').output.metadata.db_published_date",
+											"type": "Expression"
+										},
+										"type": "String"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ASPHdb",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "GetURL",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"url": {
+									"value": "@concat('https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?page=',item())",
+									"type": "Expression"
+								},
+								"method": "GET"
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "LogActions",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "GetTotalPageInfo",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[pr_PROXIMO_api_logaction]",
+					"storedProcedureParameters": {
+						"p_api_url": {
+							"value": {
+								"value": "@string('https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?')",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"p_api_total_pages": {
+							"value": {
+								"value": "@activity('GetTotalPageInfo').output.metadata.total_pages",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"p_api_published_date": {
+							"value": {
+								"value": "@activity('GetTotalPageInfo').output.metadata.db_published_date",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"p_status": {
+							"value": {
+								"value": "@string('Success')",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ASPHdb",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "CheckPreviousLoad",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select top 1 concat(Api_PublishedDate,'&published_date_comparison=gt') from dbo.tbl_api_logs where Api_URL = 'https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?'",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ASPH_api_logs",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
+		"variables": {
+			"range": {
+				"type": "Array"
+			}
+		},
+		"folder": {
+			"name": "ASPH"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-05-13T09:37:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

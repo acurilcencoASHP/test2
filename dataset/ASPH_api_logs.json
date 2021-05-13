@@ -1,0 +1,40 @@
+{
+	"name": "ASPH_api_logs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ASPHdb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Api_URL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Api_TotalPages",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Api_PublishedDate",
+				"type": "date"
+			},
+			{
+				"name": "Status",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tbl_api_logs"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

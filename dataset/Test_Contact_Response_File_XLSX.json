@@ -1,0 +1,32 @@
+{
+	"name": "Test_Contact_Response_File_XLSX",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgen_Local_FTP",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"SheetName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().SheetName",
+				"type": "Expression"
+			},
+			"location": {
+				"type": "FtpServerLocation",
+				"fileName": "Test Contact Response File.xlsx"
+			},
+			"firstRowAsHeader": false
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

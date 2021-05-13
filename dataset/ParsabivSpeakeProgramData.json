@@ -1,0 +1,145 @@
+{
+	"name": "ParsabivSpeakeProgramData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "program_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "parent_program_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "brand",
+				"type": "nvarchar"
+			},
+			{
+				"name": "budget_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "initiative",
+				"type": "nvarchar"
+			},
+			{
+				"name": "program_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "lead_rep_territory",
+				"type": "nvarchar"
+			},
+			{
+				"name": "title",
+				"type": "nvarchar"
+			},
+			{
+				"name": "program_status",
+				"type": "nvarchar"
+			},
+			{
+				"name": "program_date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "program_time",
+				"type": "nvarchar"
+			},
+			{
+				"name": "program_time_zone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "venue_location_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "venue_location_city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "venue_location_state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "venue_zip",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_amgen_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_first_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_last_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_degree",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_specialty",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_zip",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_phone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_source",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_status",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ate_meal",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sign_in_reconciled",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "ParsabivSpeakerProgramData"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

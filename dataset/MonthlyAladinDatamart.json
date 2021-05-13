@@ -1,0 +1,133 @@
+{
+	"name": "MonthlyAladinDatamart",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "facility",
+				"type": "varchar"
+			},
+			{
+				"name": "acis",
+				"type": "varchar"
+			},
+			{
+				"name": "Nnacode",
+				"type": "varchar"
+			},
+			{
+				"name": "source_short_name",
+				"type": "varchar"
+			},
+			{
+				"name": "extrnl_facility_id",
+				"type": "varchar"
+			},
+			{
+				"name": "facility_name",
+				"type": "varchar"
+			},
+			{
+				"name": "x_sub1_name",
+				"type": "varchar"
+			},
+			{
+				"name": "x_sub2_name",
+				"type": "varchar"
+			},
+			{
+				"name": "x_sub3_name",
+				"type": "varchar"
+			},
+			{
+				"name": "x_sub1_value",
+				"type": "varchar"
+			},
+			{
+				"name": "x_sub2_value",
+				"type": "varchar"
+			},
+			{
+				"name": "x_sub3_value",
+				"type": "varchar"
+			},
+			{
+				"name": "amgen_territory",
+				"type": "varchar"
+			},
+			{
+				"name": "address",
+				"type": "varchar"
+			},
+			{
+				"name": "city",
+				"type": "varchar"
+			},
+			{
+				"name": "state",
+				"type": "varchar"
+			},
+			{
+				"name": "zip",
+				"type": "varchar"
+			},
+			{
+				"name": "target",
+				"type": "varchar"
+			},
+			{
+				"name": "contractee_acis",
+				"type": "varchar"
+			},
+			{
+				"name": "sfacility",
+				"type": "varchar"
+			},
+			{
+				"name": "load_date",
+				"type": "varchar"
+			},
+			{
+				"name": "source_id",
+				"type": "varchar"
+			},
+			{
+				"name": "source_name",
+				"type": "varchar"
+			},
+			{
+				"name": "program_id",
+				"type": "varchar"
+			},
+			{
+				"name": "active_status",
+				"type": "varchar"
+			},
+			{
+				"name": "date_period",
+				"type": "varchar"
+			},
+			{
+				"name": "hcm_id",
+				"type": "varchar"
+			},
+			{
+				"name": "mastered_date",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "monthly_aladin_datamart_a02_facility_01"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

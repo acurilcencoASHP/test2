@@ -1,0 +1,17 @@
+{
+	"name": "ETL_Local",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\Users\\Dina\\Desktop\\Amgen FTP new",
+			"userId": "Dina",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzNzI3ZTAxNS0wYzM1LTQzMjItYTU0NC01ZTBkNTY2MzU1ZmQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

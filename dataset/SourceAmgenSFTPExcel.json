@@ -1,0 +1,121 @@
+{
+	"name": "SourceAmgenSFTPExcel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AmgenSftp",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"folderPath": "/clutch-sftp-prod-incoming/amgen/outgoing/proximo"
+			},
+			"sheetIndex": 0,
+			"firstRowAsHeader": false
+		},
+		"schema": [
+			{
+				"name": "HCM Customer #",
+				"type": "String"
+			},
+			{
+				"name": "Customer Name",
+				"type": "String"
+			},
+			{
+				"name": " Customer Status",
+				"type": "String"
+			},
+			{
+				"name": "Address Line 1",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Zip",
+				"type": "String"
+			},
+			{
+				"name": "Account Record Type",
+				"type": "String"
+			},
+			{
+				"name": "HCP Type",
+				"type": "String"
+			},
+			{
+				"name": "Primary Specialty",
+				"type": "String"
+			},
+			{
+				"name": "Secondary Specialty",
+				"type": "String"
+			},
+			{
+				"name": "Created By Name",
+				"type": "String"
+			},
+			{
+				"name": "Territory Id",
+				"type": "String"
+			},
+			{
+				"name": "Territory Name",
+				"type": "String"
+			},
+			{
+				"name": "Q1 - # adult CKD Patients on dialysis",
+				"type": "String"
+			},
+			{
+				"name": "Q2 - # adult CKD Patients NOT on dialysis",
+				"type": "String"
+			},
+			{
+				"name": "Q3. % of Patients - Fresenius Kidney Care",
+				"type": "String"
+			},
+			{
+				"name": "Q4. % of Patients - DaVita Kidney Care",
+				"type": "String"
+			},
+			{
+				"name": "Q5. % of Patients - Medium-sized Dialysis Org",
+				"type": "String"
+			},
+			{
+				"name": "Q6 % of Patients - Any Other Dialysis center",
+				"type": "String"
+			},
+			{
+				"name": "Q7. # of hours per visit",
+				"type": "String"
+			},
+			{
+				"name": "Q8. Rating - Level of Agreement on scale of 1-7 (Strongly  Disagree - 1, Neutral-4, Strongly Agree-7)",
+				"type": "String"
+			},
+			{
+				"name": "Segment",
+				"type": "String"
+			},
+			{
+				"name": "Normalized %s",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

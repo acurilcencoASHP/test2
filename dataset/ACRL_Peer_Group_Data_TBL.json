@@ -1,0 +1,86 @@
+{
+	"name": "ACRL_Peer_Group_Data_TBL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ALAdb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ALA_PLA"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Cgcity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cginstnm",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cgstabbr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cgunitid",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Number_of_Records",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "IPEDsID",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Primary_peer_group",
+				"type": "varchar"
+			},
+			{
+				"name": "created",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "created_by",
+				"type": "varchar"
+			},
+			{
+				"name": "modified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "modified_by",
+				"type": "varchar"
+			},
+			{
+				"name": "Peer_Group_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "institution_id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "todrop",
+			"table": "acrl_peer_group_data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

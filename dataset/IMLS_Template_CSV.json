@@ -1,0 +1,700 @@
+{
+	"name": "IMLS_Template_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ALA_Sftp",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ALA_PLA"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"fileName": "imls_template.csv",
+				"folderPath": "/IMLS_Annual_Load"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "YEAR",
+				"type": "String"
+			},
+			{
+				"name": "SURVEY_NAME",
+				"type": "String"
+			},
+			{
+				"name": "STABR",
+				"type": "String"
+			},
+			{
+				"name": "FSCSKEY",
+				"type": "String"
+			},
+			{
+				"name": "LIBID",
+				"type": "String"
+			},
+			{
+				"name": "LIBNAME",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "CITY",
+				"type": "String"
+			},
+			{
+				"name": "ZIP",
+				"type": "String"
+			},
+			{
+				"name": "ZIP4",
+				"type": "String"
+			},
+			{
+				"name": "ADDRES_M",
+				"type": "String"
+			},
+			{
+				"name": "CITY_M",
+				"type": "String"
+			},
+			{
+				"name": "ZIP_M",
+				"type": "String"
+			},
+			{
+				"name": "ZIP4_M",
+				"type": "String"
+			},
+			{
+				"name": "CNTY",
+				"type": "String"
+			},
+			{
+				"name": "PHONE",
+				"type": "String"
+			},
+			{
+				"name": "C_RELATN",
+				"type": "String"
+			},
+			{
+				"name": "C_LEGBAS",
+				"type": "String"
+			},
+			{
+				"name": "C_ADMIN",
+				"type": "String"
+			},
+			{
+				"name": "C_FSCS",
+				"type": "String"
+			},
+			{
+				"name": "GEOCODE",
+				"type": "String"
+			},
+			{
+				"name": "LSABOUND",
+				"type": "String"
+			},
+			{
+				"name": "STARTDAT",
+				"type": "String"
+			},
+			{
+				"name": "ENDDATE",
+				"type": "String"
+			},
+			{
+				"name": "POPU_LSA",
+				"type": "String"
+			},
+			{
+				"name": "F_POPLSA",
+				"type": "String"
+			},
+			{
+				"name": "POPU_UND",
+				"type": "String"
+			},
+			{
+				"name": "CENTLIB",
+				"type": "String"
+			},
+			{
+				"name": "F_CENLIB",
+				"type": "String"
+			},
+			{
+				"name": "BRANLIB",
+				"type": "String"
+			},
+			{
+				"name": "F_BRLIB",
+				"type": "String"
+			},
+			{
+				"name": "BKMOB",
+				"type": "String"
+			},
+			{
+				"name": "F_BKMOB",
+				"type": "String"
+			},
+			{
+				"name": "MASTER",
+				"type": "String"
+			},
+			{
+				"name": "F_MASTER",
+				"type": "String"
+			},
+			{
+				"name": "LIBRARIA",
+				"type": "String"
+			},
+			{
+				"name": "F_LIBRAR",
+				"type": "String"
+			},
+			{
+				"name": "OTHPAID",
+				"type": "String"
+			},
+			{
+				"name": "F_OTHSTF",
+				"type": "String"
+			},
+			{
+				"name": "TOTSTAFF",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTSTF",
+				"type": "String"
+			},
+			{
+				"name": "LOCGVT",
+				"type": "String"
+			},
+			{
+				"name": "F_LOCGVT",
+				"type": "String"
+			},
+			{
+				"name": "STGVT",
+				"type": "String"
+			},
+			{
+				"name": "F_STGVT",
+				"type": "String"
+			},
+			{
+				"name": "FEDGVT",
+				"type": "String"
+			},
+			{
+				"name": "F_FEDGVT",
+				"type": "String"
+			},
+			{
+				"name": "OTHINCM",
+				"type": "String"
+			},
+			{
+				"name": "F_OTHINC",
+				"type": "String"
+			},
+			{
+				"name": "TOTINCM",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTINC",
+				"type": "String"
+			},
+			{
+				"name": "SALARIES",
+				"type": "String"
+			},
+			{
+				"name": "F_SALX",
+				"type": "String"
+			},
+			{
+				"name": "BENEFIT",
+				"type": "String"
+			},
+			{
+				"name": "F_BENX",
+				"type": "String"
+			},
+			{
+				"name": "STAFFEXP",
+				"type": "String"
+			},
+			{
+				"name": "F_TOSTFX",
+				"type": "String"
+			},
+			{
+				"name": "PRMATEXP",
+				"type": "String"
+			},
+			{
+				"name": "F_PRMATX",
+				"type": "String"
+			},
+			{
+				"name": "ELMATEXP",
+				"type": "String"
+			},
+			{
+				"name": "F_ELMATX",
+				"type": "String"
+			},
+			{
+				"name": "OTHMATEX",
+				"type": "String"
+			},
+			{
+				"name": "F_OTMATX",
+				"type": "String"
+			},
+			{
+				"name": "TOTEXPCO",
+				"type": "String"
+			},
+			{
+				"name": "F_TOCOLX",
+				"type": "String"
+			},
+			{
+				"name": "OTHOPEXP",
+				"type": "String"
+			},
+			{
+				"name": "F_OTHOPX",
+				"type": "String"
+			},
+			{
+				"name": "TOTOPEXP",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTOPX",
+				"type": "String"
+			},
+			{
+				"name": "LCAP_REV",
+				"type": "String"
+			},
+			{
+				"name": "F_LCAPRV",
+				"type": "String"
+			},
+			{
+				"name": "SCAP_REV",
+				"type": "String"
+			},
+			{
+				"name": "F_SCAPRV",
+				"type": "String"
+			},
+			{
+				"name": "FCAP_REV",
+				"type": "String"
+			},
+			{
+				"name": "F_FCAPRV",
+				"type": "String"
+			},
+			{
+				"name": "OCAP_REV",
+				"type": "String"
+			},
+			{
+				"name": "F_OCAPRV",
+				"type": "String"
+			},
+			{
+				"name": "CAP_REV",
+				"type": "String"
+			},
+			{
+				"name": "F_TCAPRV",
+				"type": "String"
+			},
+			{
+				"name": "CAPITAL",
+				"type": "String"
+			},
+			{
+				"name": "F_TCAPX",
+				"type": "String"
+			},
+			{
+				"name": "BKVOL",
+				"type": "String"
+			},
+			{
+				"name": "F_BKVOL",
+				"type": "String"
+			},
+			{
+				"name": "EBOOK",
+				"type": "String"
+			},
+			{
+				"name": "F_EBOOK",
+				"type": "String"
+			},
+			{
+				"name": "AUDIO_PH",
+				"type": "String"
+			},
+			{
+				"name": "F_AUD_PH",
+				"type": "String"
+			},
+			{
+				"name": "AUDIO_DL",
+				"type": "String"
+			},
+			{
+				"name": "F_AUD_DL",
+				"type": "String"
+			},
+			{
+				"name": "VIDEO_PH",
+				"type": "String"
+			},
+			{
+				"name": "F_VID_PH",
+				"type": "String"
+			},
+			{
+				"name": "VIDEO_DL",
+				"type": "String"
+			},
+			{
+				"name": "F_VID_DL",
+				"type": "String"
+			},
+			{
+				"name": "EC_LO_OT",
+				"type": "String"
+			},
+			{
+				"name": "F_EC_L_O",
+				"type": "String"
+			},
+			{
+				"name": "EC_ST",
+				"type": "String"
+			},
+			{
+				"name": "F_EC_ST",
+				"type": "String"
+			},
+			{
+				"name": "ELECCOLL",
+				"type": "String"
+			},
+			{
+				"name": "F_ELECOL",
+				"type": "String"
+			},
+			{
+				"name": "SUBSCRIP",
+				"type": "String"
+			},
+			{
+				"name": "F_PRSUB",
+				"type": "String"
+			},
+			{
+				"name": "HRS_OPEN",
+				"type": "String"
+			},
+			{
+				"name": "F_HRS_OP",
+				"type": "String"
+			},
+			{
+				"name": "VISITS",
+				"type": "String"
+			},
+			{
+				"name": "F_VISITS",
+				"type": "String"
+			},
+			{
+				"name": "REFERENC",
+				"type": "String"
+			},
+			{
+				"name": "F_REFER",
+				"type": "String"
+			},
+			{
+				"name": "REGBOR",
+				"type": "String"
+			},
+			{
+				"name": "F_REGBOR",
+				"type": "String"
+			},
+			{
+				"name": "TOTCIR",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTCIR",
+				"type": "String"
+			},
+			{
+				"name": "KIDCIRCL",
+				"type": "String"
+			},
+			{
+				"name": "F_KIDCIR",
+				"type": "String"
+			},
+			{
+				"name": "ELMATCIR",
+				"type": "String"
+			},
+			{
+				"name": "F_EMTCIR",
+				"type": "String"
+			},
+			{
+				"name": "PHYSCIR",
+				"type": "String"
+			},
+			{
+				"name": "F_PHYSCR",
+				"type": "String"
+			},
+			{
+				"name": "ELINFO",
+				"type": "String"
+			},
+			{
+				"name": "F_ELINFO",
+				"type": "String"
+			},
+			{
+				"name": "ELCONT",
+				"type": "String"
+			},
+			{
+				"name": "F_ELCONT",
+				"type": "String"
+			},
+			{
+				"name": "TOTCOLL",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTCOL",
+				"type": "String"
+			},
+			{
+				"name": "LOANTO",
+				"type": "String"
+			},
+			{
+				"name": "F_LOANTO",
+				"type": "String"
+			},
+			{
+				"name": "LOANFM",
+				"type": "String"
+			},
+			{
+				"name": "F_LOANFM",
+				"type": "String"
+			},
+			{
+				"name": "TOTPRO",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTPRO",
+				"type": "String"
+			},
+			{
+				"name": "KIDPRO",
+				"type": "String"
+			},
+			{
+				"name": "F_KIDPRO",
+				"type": "String"
+			},
+			{
+				"name": "YAPRO",
+				"type": "String"
+			},
+			{
+				"name": "F_YAPRO",
+				"type": "String"
+			},
+			{
+				"name": "TOTATTEN",
+				"type": "String"
+			},
+			{
+				"name": "F_TOTATT",
+				"type": "String"
+			},
+			{
+				"name": "KIDATTEN",
+				"type": "String"
+			},
+			{
+				"name": "F_KIDATT",
+				"type": "String"
+			},
+			{
+				"name": "YAATTEN",
+				"type": "String"
+			},
+			{
+				"name": "F_YAATT",
+				"type": "String"
+			},
+			{
+				"name": "GPTERMS",
+				"type": "String"
+			},
+			{
+				"name": "F_GPTERM",
+				"type": "String"
+			},
+			{
+				"name": "PITUSR",
+				"type": "String"
+			},
+			{
+				"name": "F_PITUSR",
+				"type": "String"
+			},
+			{
+				"name": "WIFISESS",
+				"type": "String"
+			},
+			{
+				"name": "F_WIFISS",
+				"type": "String"
+			},
+			{
+				"name": "WEBVISIT",
+				"type": "String"
+			},
+			{
+				"name": "YR_SUB",
+				"type": "String"
+			},
+			{
+				"name": "OBEREG",
+				"type": "String"
+			},
+			{
+				"name": "RSTATUS",
+				"type": "String"
+			},
+			{
+				"name": "STATSTRU",
+				"type": "String"
+			},
+			{
+				"name": "STATNAME",
+				"type": "String"
+			},
+			{
+				"name": "STATADDR",
+				"type": "String"
+			},
+			{
+				"name": "LONGITUD",
+				"type": "String"
+			},
+			{
+				"name": "LATITUDE",
+				"type": "String"
+			},
+			{
+				"name": "INCITSST",
+				"type": "String"
+			},
+			{
+				"name": "INCITSCO",
+				"type": "String"
+			},
+			{
+				"name": "GNISPLAC",
+				"type": "String"
+			},
+			{
+				"name": "CNTYPOP",
+				"type": "String"
+			},
+			{
+				"name": "LOCALE_ADD",
+				"type": "String"
+			},
+			{
+				"name": "LOCALE_MOD",
+				"type": "String"
+			},
+			{
+				"name": "REAPLOCALE_ADD",
+				"type": "String"
+			},
+			{
+				"name": "REAPLOCALE_MOD",
+				"type": "String"
+			},
+			{
+				"name": "CENTRACT",
+				"type": "String"
+			},
+			{
+				"name": "CENBLOCK",
+				"type": "String"
+			},
+			{
+				"name": "CDCODE",
+				"type": "String"
+			},
+			{
+				"name": "CBSA",
+				"type": "String"
+			},
+			{
+				"name": "MICROF",
+				"type": "String"
+			},
+			{
+				"name": "GEOMATCH",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

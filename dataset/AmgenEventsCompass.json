@@ -1,0 +1,337 @@
+{
+	"name": "AmgenEventsCompass",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amgendb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Amgen"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "eventid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cardid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "eventtype",
+				"type": "nvarchar"
+			},
+			{
+				"name": "locationid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "terminalid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "categoryid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "payload",
+				"type": "nvarchar"
+			},
+			{
+				"name": "eventdate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customcardnumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cdl_uuid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cdl_frequency",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cdl_effective_date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cdl_run_identifier",
+				"type": "nvarchar"
+			},
+			{
+				"name": "business_unit_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "business_unit_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_code_5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_name_5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_code_5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_name_5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_code_4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_name_4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_code_4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_name_4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_code_3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_name_3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_code_3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_name_3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_code_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_name_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_code_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_name_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "field_force_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "territory_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "representative_staff_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "representative_staff_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "primary_representative_flag",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "zip",
+				"type": "nvarchar"
+			},
+			{
+				"name": "party_type_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "party_type_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "party_subtype_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "party_subtype_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "party_service_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "party_service_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "specialty_1_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "specialty_1_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "specialty_2_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "specialty_2_description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "activity_call_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "year",
+				"type": "nvarchar"
+			},
+			{
+				"name": "semester_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "quarter_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "month_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "week_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "week_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "call_date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "parent_call_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "parent_customer_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "anp_call_flag",
+				"type": "nvarchar"
+			},
+			{
+				"name": "call_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "call_category",
+				"type": "nvarchar"
+			},
+			{
+				"name": "call_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "product_order",
+				"type": "nvarchar"
+			},
+			{
+				"name": "source_product_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "brand_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "call_status",
+				"type": "nvarchar"
+			},
+			{
+				"name": "message_opt_out",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_status_explanation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "attendee_status_explanation_notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "previous_call_notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "next_call_notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "valid_call_flag",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "amgen",
+			"table": "amgen_events_compass"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_oef",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2021-03-05T11:24:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

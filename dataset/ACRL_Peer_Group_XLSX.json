@@ -1,0 +1,44 @@
+{
+	"name": "ACRL_Peer_Group_XLSX",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ALA_Sftp",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ALA_PLA"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "SftpLocation",
+				"fileName": "acrl_peer_groups.xlsx",
+				"folderPath": "/ACRL_Peer_Group_Annual_Load"
+			},
+			"firstRowAsHeader": false
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
